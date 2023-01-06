@@ -2,6 +2,8 @@ let operation = prompt('What mathematical operation should I do(+,-,/,* or add, 
 let firstNumber = +prompt('Enter the first number:')
 let secondNumber = +prompt('Enter the second number:')
 
+if (firstNumber === !Number)
+
 function Calculatrice(firstNumber, secondNumber, operation) {
     switch (operation) {
         case '+':
@@ -28,6 +30,7 @@ function Calculatrice(firstNumber, secondNumber, operation) {
         case 'mult':
             return firstNumber * secondNumber;
             break;
+        default: alert("Invalid math operation, try again!");
     }
 };
 
