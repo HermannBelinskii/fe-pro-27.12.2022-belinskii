@@ -2,7 +2,21 @@ let operation = prompt('What mathematical operation should I do(+,-,/,* or add, 
 
 let firstNumber = +prompt('Enter the first number:');
 
+if (isNaN(firstNumber) || firstNumber == "") {
+    do {
+        alert(`This is not a number! Insert the n-u-m-b-e-r!`);
+        firstNumber = +prompt('Enter the first number:');
+    } while (isNaN(firstNumber) || firstNumber == "");
+}
+
 let secondNumber = +prompt('Enter the second number:');
+
+if (isNaN(secondNumber) || firstNumber == "") {
+    do {
+        alert(`This is not a number! Insert the n-u-m-b-e-r!`);
+        secondNumber = +prompt('Enter the second number:');
+    } while (isNaN(secondNumber) || secondNumber == "");
+}
 
 function Calculatrice(firstNumber, secondNumber, operation) {
     switch (operation) {
@@ -34,4 +48,4 @@ function Calculatrice(firstNumber, secondNumber, operation) {
     }
 };
 
-alert (`Result is : ${Calculatrice(firstNumber, secondNumber, operation)}`);
+alert (`Your result is : ${Calculatrice(firstNumber, secondNumber, operation)}`);
