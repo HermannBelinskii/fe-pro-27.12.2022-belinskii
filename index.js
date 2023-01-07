@@ -1,8 +1,8 @@
-let operation = prompt('What mathematical operation should I do(+,-,/,* or add, sub, div, mult)?')
-let firstNumber = +prompt('Enter the first number:')
-let secondNumber = +prompt('Enter the second number:')
+let operation = prompt('What mathematical operation should I do(+,-,/,* or add, sub, div, mult)?');
 
-if (firstNumber === !Number)
+let firstNumber = +prompt('Enter the first number:');
+
+let secondNumber = +prompt('Enter the second number:');
 
 function Calculatrice(firstNumber, secondNumber, operation) {
     switch (operation) {
