@@ -2,7 +2,7 @@ class Student {
   constructor (firstName, lastName, dateOfBirth, grade, attendance){ 
     this.firstName = firstName; 
     this.lastName = lastName; 
-    this.dateOfBirth = dateOfBirth; 
+    this.dateOfBirth = dateOfBirth, 
     this.grade = grade;  
     this.attendance = new Array(25); 
   } 
@@ -55,32 +55,13 @@ class Student {
 
 let studentOne = new Student('Hermann', 'Belinskii', 1994, [90, 90, 90])
 
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
-studentOne.absent()
+function callMethodMultipleTimes(student ,method, times) {
+  for (let i = 0; i < times; i++) {
+    student[method]();
+  }
+}
 
+callMethodMultipleTimes(studentOne, 'absent', 25);
 console.log(studentOne)
 studentOne.calculateAverageScore()
 studentOne.summary()
@@ -89,33 +70,8 @@ console.log(studentOne.calculateAverageScore())
 
 
 let studentTwo = new Student('Alex', 'Fog', 1992, [100, 100, 90])
-
+callMethodMultipleTimes(studentTwo, 'present', 25);
 studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-studentTwo.present()
-
 console.log(studentTwo)
 studentTwo.calculateAverageScore()
 studentTwo.summary()
@@ -123,7 +79,7 @@ studentTwo.calculateAge()
 console.log(studentTwo.calculateAverageScore())
 
 let studentThree = new Student('Olga', 'Love', 1992, [20, 20, 20])
-
+callMethodMultipleTimes(studentThree, 'absent', 25);
 console.log(studentThree)
 studentThree.calculateAverageScore()
 studentThree.calculateAge()
