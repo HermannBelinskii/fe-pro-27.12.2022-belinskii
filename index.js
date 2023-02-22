@@ -55,8 +55,8 @@ class Student {
 
 let studentOne = new Student('Hermann', 'Belinskii', 1994, [90, 90, 90])
 
-function callMethodMultipleTimes(student ,method, times) {
-  for (let i = 0; i < times; i++) {
+function callMethodMultipleTimes(student, method, times) {
+  for (let i = 0; i <= times; i++) {
     student[method]();
   }
 }
