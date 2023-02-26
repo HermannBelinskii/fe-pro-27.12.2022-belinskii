@@ -2,7 +2,7 @@ const btn = document.querySelector('.button');
 const firstBtnForAdd = document.querySelector('#first-btn')
 const secondBtnForRemove = document.querySelector('#second-btn')
 const blockWithBtn = document.querySelector('.main-block')
-function createnote() {
+function createNote() {
   const note = document.createElement("div")
   const info = prompt('Enter text:')
   note.classList.add('note')
@@ -15,7 +15,7 @@ function createnote() {
 
 
 firstBtnForAdd.addEventListener('click', function() {
-  blockWithBtn.appendChild(createnote());
+  blockWithBtn.appendChild(createNote());
 });
 
 secondBtnForRemove.addEventListener('click', function() {
