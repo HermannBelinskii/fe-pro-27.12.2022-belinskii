@@ -16,7 +16,7 @@ const products = {
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam adipisci sint, unde tempora rerum omnis.'
         }, 
         {
-            name: 'DG',
+            name: 'Louis Vuitton',
             price: 389,
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam adipisci sint, unde tempora rerum omnis.'
         },
@@ -26,7 +26,7 @@ const products = {
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam adipisci sint, unde tempora rerum omnis.'
         },
         {
-            name: 'Armani',
+            name: 'D&G',
             price: 315,
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam adipisci sint, unde tempora rerum omnis.'
         },
@@ -58,7 +58,7 @@ const products = {
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam adipisci sint, unde tempora rerum omnis.'
         },
         {
-            name: 'Puma',
+            name: 'Rebock',
             price: 765,
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam adipisci sint, unde tempora rerum omnis.'
         },
@@ -90,7 +90,7 @@ const products = {
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam adipisci sint, unde tempora rerum omnis.'
         },
         {
-            name: 'Tommy',
+            name: 'Tommy Jeanse',
             price: 3784,
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam adipisci sint, unde tempora rerum omnis.'
         },
