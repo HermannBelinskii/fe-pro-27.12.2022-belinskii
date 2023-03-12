@@ -10,9 +10,6 @@ const actionType = {
     jeans: () => addProduct('jeans')
 };
 
-// const overlay = document.createElement('div');
-// overlay.classList.add('overlay');
-// document.body.appendChild(overlay);
 
 cataloge.addEventListener('click', (e)=>{
     const targetAction = e.target.dataset.product;
