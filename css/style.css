@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800;900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    width: 1100px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(252deg, rgba(45,204,223,1) 0%, rgba(246,246,246,1) 77%);
+}
+
+.cataloge{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 40px;
+    cursor: pointer;
+    margin: 35px;
+}
+
+
+.cataloge__category{
+    border: 3px solid #21afb4;
+    width: 300px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 25px;
+    color: #849b9c;
+    transition: .3s ease-in-out;
+}
+
+.cataloge__category:hover{
+    background-color: #21afb4;
+    color: #fff;
+}
+
+.products{
+    width: 500px;
+    height: auto;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.product-card{
+    padding: 15px;
+    margin-left: 40px;
+}
+
+.product-card h3{
+    font-weight: 500;
+    border:  2px solid #21afb4;
+    padding: 15px;
+    text-align: center;
+    border-radius: 20px 20px 0 20px;
+    color: #849b9c;
+    transition: .3s ease-in-out;
+}
+
+.product-card h3:hover{
+    background-color: #21afb4;
+    color: #fff;
+}
+
+.product-info{
+    width: 400px;
+    min-height: 250px;
+    border: 3px solid blue;
+    padding: 20px;
+    border:  2px solid #21afb4;
+    border-radius: 20px 20px 20px 0;
+    margin: 15px;
+    position: relative;
+}
+
+.product-info p{
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #3c3f3f;
+}
+
+.product-info button{
+    background-color:#0a0a23;
+    color: #fff;
+    border:none;
+    border-radius:10px;
+    padding: 10px 15px;
+    margin-top: 30px;
+    position: absolute;
+    bottom: 17px;
+    right: 17px;
+    /* width: 100px; */
+    background-color: #21afb4;
+    border:  2px solid #21afb4;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.product-info button:hover{
+    background-color: transparent;
+    color: #21afb4;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.action{
+    background-color: #21afb4;
+    color: #fff;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(252deg, rgba(45,204,223,1) 0%, rgba(246,246,246,1) 77%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+    font-size: 25px;
+    text-align: center;
+    color: #21afb4;
+    font-weight: 600;
+}
+  
+.popup.visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.close-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    cursor: pointer;
+    background-color: #21afb4;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s ease-in-out;
+    border:  2px solid #21afb4;
+}
+
+.close-button:hover{
+    background-color: transparent;
+    color: #21afb4;
+}
+
+.store{
+    display: flex;
+    gap: 40px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 965;
+}
