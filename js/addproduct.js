@@ -24,10 +24,11 @@ function addProduct(productType) {
             categoryDescription.appendChild(productInfo);
             productInfo.appendChild(buyBtn);
             buyBtn.addEventListener('click', () => {
-                createPopupWithCloseButton();
-                closeAll()
+                contactForm.style.display = 'flex';
+                overlayDisplay()
             });
             lastProductInfo = productInfo;
         })
     });
 };
+

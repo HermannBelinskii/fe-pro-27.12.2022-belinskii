@@ -7,14 +7,13 @@ function createPopupWithCloseButton() {
     closeButton.classList.add('close-button');
     closeButton.addEventListener('click', function() {
         document.body.removeChild(popup);
-        document.body.removeChild(overlay);
-        document.body.style.overflow = 'auto';
+        removeOverlay()
     });
     popup.appendChild(closeButton);
     document.body.appendChild(popup);
-    const overlay = document.createElement('div');
-    overlay.classList.add('overlay');
-    document.body.appendChild(overlay);
+    const overlay = document.querySelector('.overlay');
+    overlay.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    closeAll();
     return popup;
 };

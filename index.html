@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-
     <div class="cataloge">
         <div class=" cataloge__category" data-product="tshirts">T-SHIRTS</div>
         <div class=" cataloge__category" data-product="sneakers">SNEAKERS</div>
@@ -18,12 +17,61 @@
         <div class="category__name"></div>
         <div class="category__description"></div>
     </div>
+    <div class="contact-form">
+        <form class="form" id="contact-form" >
+            <h3 class="form-title">Purchase contact information</h3>
+            <label class="label-text" for="name">Your full name</label>
+            <input class="input-name" placeholder="For example: Alex May" type="text" name="" id="name">
+            <p class="error-name">Information entered incorrectly</p>
+            <label class="label-text" for="email">Your email</label>
+            <input class="input-email" placeholder="Your email" type="email" name="" id="email">
+            <p class="error error-email">Information entered incorrectly</p>
+            <label class="label-text" for="phone">Your phone</label>
+            <input class="input-phone" placeholder="Your phone" type="tel" name="" id="phone">
+            <p class="error error-phone">Information entered incorrectly</p>
+            <label class="label-text" for="choose-city">Choose your city</label>
+            <select class="select-city" name="city" id="choose-city">
+                <option value="Odessa">Odessa</option>
+                <option value="Lviv">Lviv</option>
+                <option value="Kyiv">Kyiv</option>
+            </select>
+            <label class="label-text" for="choose-np">Choose your department of NP</label>
+            <select class="select-np" name="post" id="choose-np">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <label class="label-text" for="pay">Choose a payment method:</label>
+            <select class="select-pay" name="payment" id="pay">
+                <option value="bank card">bank card</option>
+                <option value="after receiving">after receiving</option>
+            </select>
+            <label class="label-text" for="quantity">Quantity of goods:</label>
+            <select class="select-quantity" name="quantity" id="pay">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <label class="label-text" for="textarea">Your massege</label>
+            <textarea class="textarea-info"  name="comment" id="comment" cols="5" rows="4"></textarea>
+            <div class="btn-block">
+                <button id="submit_btn" class="btn-submit form-btn" type="submit">SUBMIT</button>
+                <button class="close-form form-btn">CLOSE</button>
+            </div>
+
+        </form>
+    </div>
+    
+
+    
 
 
     <script src="js/products.js"></script>
     <script src="js/addproduct.js"></script>
     <script src="js/closepopup.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/form.js"></script>
     <script src="js/index.js"></script>
     <!-- <script src="js/function.js"></script> -->
 </body>
