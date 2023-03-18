@@ -20,7 +20,7 @@
     <div class="contact-form">
         <form class="form" id="contact-form" >
             <h3 class="form-title">Purchase contact information</h3>
-            <label class="label-text" for="name">Your full name</label>
+            <label class="label-text" for="name">Your full name and surname</label>
             <input class="input-name" placeholder="For example: Alex May" type="text" name="" id="name">
             <p class="error-name">Information entered incorrectly</p>
             <label class="label-text" for="email">Your email</label>
@@ -31,30 +31,38 @@
             <p class="error error-phone">Information entered incorrectly</p>
             <label class="label-text" for="choose-city">Choose your city</label>
             <select class="select-city" name="city" id="choose-city">
+                <option value="default">Choose the option:</option>
                 <option value="Odessa">Odessa</option>
                 <option value="Lviv">Lviv</option>
                 <option value="Kyiv">Kyiv</option>
             </select>
+            <p class="error error-city">Choose one of the options, please!</p>
             <label class="label-text" for="choose-np">Choose your department of NP</label>
             <select class="select-np" name="post" id="choose-np">
+                <option value="default">Choose the option:</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
             </select>
+            <p class="error error-post">Choose one of the options, please!</p>
             <label class="label-text" for="pay">Choose a payment method:</label>
             <select class="select-pay" name="payment" id="pay">
+                <option value="default">Choose the option</option>
                 <option value="bank card">bank card</option>
                 <option value="after receiving">after receiving</option>
             </select>
+            <p class="error error-payment">Choose one of the options, please!</p>
             <label class="label-text" for="quantity">Quantity of goods:</label>
             <select class="select-quantity" name="quantity" id="pay">
+                <option value="default">Choose the option</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
             </select>
+            <p class="error error-quantity">Choose one of the options, please!</p>
             <label class="label-text" for="textarea">Your massege</label>
-            <textarea class="textarea-info"  name="comment" id="comment" cols="5" rows="4"></textarea>
+            <textarea class="textarea-info"  name="comment" id="comment" cols="2" rows="2"></textarea>
             <div class="btn-block">
                 <button id="submit_btn" class="btn-submit form-btn" type="submit">SUBMIT</button>
                 <button class="close-form form-btn">CLOSE</button>
@@ -71,8 +79,8 @@
     <script src="js/addproduct.js"></script>
     <script src="js/closepopup.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/formValidAndDataFunc.js"></script>
     <script src="js/form.js"></script>
     <script src="js/index.js"></script>
-    <!-- <script src="js/function.js"></script> -->
 </body>
 </html>

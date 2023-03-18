@@ -15,7 +15,7 @@ const inputs = [
 	{
 		name: 'name',
 		inputEl: userName,
-		validationsRules: [validateStringLength],
+		validationsRules: [validateStringLength, validateNameEnglish],
 		isValid: false,
 		needToValidate: true,
 		errorEl: userName.parentElement.querySelector('.error-name')
@@ -23,7 +23,7 @@ const inputs = [
 	{
 		name: 'phone',
 		inputEl: userPhone,
-		validationsRules: [isNumber],
+		validationsRules: [validatePhone, validatePhoneLength, validateForValue],
 		isValid: false,
 		needToValidate: true,
 		errorEl: userPhone.parentElement.querySelector('.error-phone')
@@ -39,18 +39,34 @@ const inputs = [
     {
         name: 'city',
 		inputEl: userFrom,
+		validationsRules: [validateSelect],
+        isValid: false,
+		needToValidate: true,
+		errorEl: userQuantity.parentElement.querySelector('.error-city')
     },
     {
         name: 'pay',
 		inputEl: userPay,
+		validationsRules: [validateSelect],
+        isValid: false,
+		needToValidate: true,
+		errorEl: userQuantity.parentElement.querySelector('.error-payment')
     },
     {
         name: 'post',
 		inputEl: userPost,
+		validationsRules: [validateSelect],
+        isValid: false,
+		needToValidate: true,
+		errorEl: userQuantity.parentElement.querySelector('.error-post')
     },
     {
         name: 'quantity',
 		inputEl: userQuantity,
+        validationsRules: [validateSelect],
+        isValid: false,
+		needToValidate: true,
+		errorEl: userQuantity.parentElement.querySelector('.error-quantity')
     },
     {
         name: 'comment',
@@ -61,11 +77,10 @@ const inputs = [
 
 button.addEventListener('click', (e) => {
 	e.preventDefault();
-
 	const validatedArr = inputs.map((el) => {
         if (el.validationsRules) {
             const isAllValid = el.validationsRules.map((func) => {
-                return func(el.inputEl.value, el.errorEl)
+                return func(el.inputEl.value, el.errorEl, el.name)
             })
             return isAllValid.every(el => el === true)
         } else {
@@ -73,7 +88,8 @@ button.addEventListener('click', (e) => {
         }
     })
 
-	if(validatedArr.every(el => el === true)) {
+
+if(validatedArr.every(el => el === true)) {
 		const data = {}
 		inputs.forEach((input) => {
 			data[input.name] = input.inputEl.value
@@ -86,43 +102,6 @@ button.addEventListener('click', (e) => {
 	} else {
 		console.log(`something wrong`)
 	};
-
 });
 
-function sendData(data) {
-    console.log(`${data} send to server`);
-};
-
-const closeForm = document.querySelector('.close-form');
-closeForm.addEventListener('click', (e)=>{
-    e.preventDefault();
-    contactForm.style.display = 'none';
-    removeOverlay();
-})
-
-
-
-function validateStringLength(value, errorEl) {
-    const isValid = value.length >= 2
-    errorEl.classList[isValid ? 'add' : 'remove']('error-name')
-    return isValid
-};
-
-function validateForValue(value, errorEl) {
-    const isValid = !!value.trim();
-	errorEl.classList[isValid ? 'add' : 'remove']('error-email')
-    return isValid
-};
-
-function isNumber(value, errorEl) {
-	const isValid = value ? !isNaN(+value) : false
-	errorEl.classList[isValid ? 'add' : 'remove']('error-phone')
-	return isValid
-};
-
-function isEmail(value, errorEl) {
-    const isValid = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value)
-	errorEl.classList[isValid ? 'add' : 'remove']('error-email')
-    return isValid
-};
 
