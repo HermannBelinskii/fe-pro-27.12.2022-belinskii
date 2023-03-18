@@ -23,7 +23,7 @@ const inputs = [
 	{
 		name: 'phone',
 		inputEl: userPhone,
-		validationsRules: [validatePhone, validatePhoneLength, validateForValue],
+		validationsRules: [validatePhone],
 		isValid: false,
 		needToValidate: true,
 		errorEl: userPhone.parentElement.querySelector('.error-phone')
@@ -87,8 +87,6 @@ button.addEventListener('click', (e) => {
             return true;
         }
     })
-
-
 if(validatedArr.every(el => el === true)) {
 		const data = {}
 		inputs.forEach((input) => {

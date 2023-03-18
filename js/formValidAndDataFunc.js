@@ -32,22 +32,10 @@ function validateForValue(value, errorEl, fieldName) {
     return isValid;
 };
 
-function isNumber(value, errorEl) {
-	const isValid = value ? !isNaN(+value) : false
-	errorEl.classList[isValid ? 'add' : 'remove']('error-phone')
-	return isValid
-};
-
 function validatePhone(value, errorEl) {
 	const phoneRegex = /^\+?[1-9]\d{1,14}$/.test(value);
 	errorEl.classList[phoneRegex ? 'add' : 'remove']('error-phone')
 	return phoneRegex;
-}
-
-function validatePhoneLength(value, errorEl) {
-	const phoneLength = value.length === 8;
-	errorEl.classList[phoneLength ? 'add' : 'remove']('error-phone')
-	return phoneLength;
 }
 
 function isEmail(value, errorEl) {
