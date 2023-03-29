@@ -6,7 +6,10 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   postContainer.innerHTML = '';
   const postId = document.querySelector('#postId').value;
-  if (!postId) return;
+  if (!validatePostId(postId)) {
+    createErrorMessage('You must enter a number from 1 to 100.');
+    return;
+  }
 
   fetch(`${URL}${postId}`)
     .then(res => {
@@ -30,7 +33,6 @@ form.addEventListener('submit', event => {
       createElementForMiss()
     })
 });
-
 
 function createCommentsButton(postId, postElement) {
   const commentsButton = document.createElement('button');
@@ -56,7 +58,7 @@ function createCommentsButton(postId, postElement) {
       })
   });
   return commentsButton;
-}
+};
 
 function createCloseButton() {
   const closeButton = document.createElement('button');
@@ -65,7 +67,19 @@ function createCloseButton() {
     postContainer.innerHTML = '';
   });
   return closeButton;
-}
+};
+
+function validatePostId(postId) {
+  const pattern = /^[1-9][0-9]?$|^100$/;
+  return pattern.test(postId);
+};
+
+function createErrorMessage(message) {
+  const errorMessage = document.createElement('p');
+  errorMessage.textContent = message;
+  postContainer.appendChild(errorMessage);
+};
+
 
 
 
@@ -129,3 +143,6 @@ function createCloseButton() {
 //   errorMass.innerText = 'You entered the wrong post number. Enter a number from 1 to 100.'
 //   postContainer.appendChild(errorMass)  
 // };
+
+
+
