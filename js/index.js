@@ -14,7 +14,7 @@ form.addEventListener('submit', event => {
   fetchPost(`${URL}${postId}`, renderPost);
 });
 
-function fetchPost(url, onSuccess) {
+function fetchPost(url, callback, ...arg) {
   fetch(url)
     .then(res => {
       if (res.ok) {
@@ -22,7 +22,8 @@ function fetchPost(url, onSuccess) {
       } 
       throw {message: 'The post could not be found'};
     })
-    .then(onSuccess)
+    .then(res => {
+      callback(res, ...arg) })
     .catch((error) =>{
       console.error(error.message)
   });
