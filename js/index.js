@@ -1,6 +1,6 @@
 const form = document.querySelector('form');
 const postContainer = document.querySelector('#post-container');
-const URL = 'https://jsonplaceholder.typicode.com/pots/'
+const URL = 'https://jsonplaceholder.typicode.com/posts/'
 
 form.addEventListener('submit', event => {
   event.preventDefault();
