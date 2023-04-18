@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { Component } from "react";
+import Winner from "./Result";
+import Smiley from "./Smiley";
 
-function App() {
-  const [count, setCount] = useState(0)
+class App extends Component {
 
-  return (
-    <div className="App">
+  state = {
+    smileys: [
+      { id: 1, symbol: "🙂", count: 0 },
+      { id: 2, symbol: "🙁", count: 0 },
+      { id: 3, symbol: "😔", count: 0 }
+    ],
+    winner: null
+  };
+
+  // handleSmileyClick = (id) => {
+  //   const index = this.state.smileys.findIndex(smiley => smiley.id === id);
+  //   const updatedSmiley = { ...this.state.smileys[index], count: this.state.smileys[index].count + 1 };
+  //   const updatedSmileys = [...this.state.smileys];
+  //   updatedSmileys[index] = updatedSmiley;
+  //   this.setState({ smileys: updatedSmileys });
+  // };
+
+
+  handleSmileyClick = (id) => {
+    this.setState(prevState => ({
+      smileys: prevState.smileys.map(smiley => {
+        if (smiley.id === id) {
+          return { ...smiley, count: smiley.count + 1 };
+        }
+        return smiley;
+      })
+    }));
+  };
+
+  handleShowResults = () => {
+    const setWinner = this.state.smileys.reduce((prev, current) => (prev.count > current.count) ? prev : current);
+    this.setState({ winner: setWinner });
+  };
+
+  render() {
+    return (
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {this.state.smileys.map(({ id, symbol, count }) => (
+          <Smiley
+            key={id}
+            symbol={symbol}
+            count={count}
+            onClick={() => this.handleSmileyClick(id)}
+          />
+        ))}
+        <Winner
+          smileys={this.state.smileys}
+          onShowResults={this.handleShowResults}
+          winner={this.state.winner}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    );
+  }
 }
 
-export default App
+export default App;
