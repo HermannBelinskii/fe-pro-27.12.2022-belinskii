@@ -13,15 +13,6 @@ class App extends Component {
     winner: null
   };
 
-  // handleSmileyClick = (id) => {
-  //   const index = this.state.smileys.findIndex(smiley => smiley.id === id);
-  //   const updatedSmiley = { ...this.state.smileys[index], count: this.state.smileys[index].count + 1 };
-  //   const updatedSmileys = [...this.state.smileys];
-  //   updatedSmileys[index] = updatedSmiley;
-  //   this.setState({ smileys: updatedSmileys });
-  // };
-
-
   handleSmileyClick = (id) => {
     this.setState(prevState => ({
       smileys: prevState.smileys.map(smiley => {
