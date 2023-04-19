@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import Winner from "./Result";
-import Smiley from "./Smiley";
+import Winner from "./components/Winner";
+import Smiley from "./components/Smiley";
+import classes from './App.module.scss'
+
 
 class App extends Component {
 
@@ -10,12 +12,12 @@ class App extends Component {
       { id: 2, symbol: "🙁", count: 0 },
       { id: 3, symbol: "😔", count: 0 }
     ],
-    winner: null
+    winners: []
   };
 
   handleSmileyClick = (id) => {
-    this.setState(prevState => ({
-      smileys: prevState.smileys.map(smiley => {
+    this.setState((prevState) => ({
+      smileys: prevState.smileys.map((smiley) => {
         if (smiley.id === id) {
           return { ...smiley, count: smiley.count + 1 };
         }
@@ -25,13 +27,15 @@ class App extends Component {
   };
 
   handleShowResults = () => {
-    const setWinner = this.state.smileys.reduce((prev, current) => (prev.count > current.count) ? prev : current);
-    this.setState({ winner: setWinner });
+    const sortedSmileys = [...this.state.smileys].sort((a, b) => b.count - a.count);
+    const maxCount = sortedSmileys[0].count;
+    const winners = sortedSmileys.filter((smiley) => smiley.count === maxCount);
+    this.setState({ winners: winners });
   };
 
   render() {
     return (
-      <div>
+      <div className={classes.app}>
         {this.state.smileys.map(({ id, symbol, count }) => (
           <Smiley
             key={id}
@@ -43,7 +47,7 @@ class App extends Component {
         <Winner
           smileys={this.state.smileys}
           onShowResults={this.handleShowResults}
-          winner={this.state.winner}
+          winners={this.state.winners}
         />
       </div>
     );
