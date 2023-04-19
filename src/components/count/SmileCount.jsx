@@ -1,0 +1,56 @@
+import React, { Component } from "react";
+import Smiley from "./components/Smiley";
+import Winner from "./components/Winner";
+import classes from './SmileCount.module.scss'
+
+
+class SmileCount extends Component {
+
+  state = {
+    smileys: [
+      { id: 1, symbol: "🙂", count: 0 },
+      { id: 2, symbol: "🙁", count: 0 },
+      { id: 3, symbol: "😔", count: 0 }
+    ],
+    winners: []
+  };
+
+  handleSmileyClick = (id) => {
+    this.setState((prevState) => ({
+      smileys: prevState.smileys.map((smiley) => {
+        if (smiley.id === id) {
+          return { ...smiley, count: smiley.count + 1 };
+        }
+        return smiley;
+      })
+    }));
+  };
+
+  handleShowResults = () => {
+      const sortedSmileys = [...this.state.smileys].sort((a, b) => b.count - a.count);
+      const maxCount = sortedSmileys[0].count;
+      const winners = sortedSmileys.filter((smiley) => smiley.count === maxCount);
+      this.setState({ winners: winners });
+  };
+  render() {
+    return (
+      <div className={classes.main_box}>
+        {this.state.smileys.map(({ id, symbol, count }) => (
+          <Smiley
+            key={id}
+            symbol={symbol}
+            count={count}
+            onClick={() => this.handleSmileyClick(id)}
+          />
+        ))}
+        <Winner
+          smileys={this.state.smileys}
+          onShowResults={this.handleShowResults}
+          winners={this.state.winners}
+        />
+      </div>
+    );
+  }
+}
+
+export default SmileCount;
