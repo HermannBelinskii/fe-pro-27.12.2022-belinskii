@@ -27,14 +27,10 @@ class App extends Component {
   };
 
   handleShowResults = () => {
-    const shouldShowResults = this.state.smileys.some(smiley => smiley.count > 0);
-  
-    if (shouldShowResults) {
       const sortedSmileys = [...this.state.smileys].sort((a, b) => b.count - a.count);
       const maxCount = sortedSmileys[0].count;
       const winners = sortedSmileys.filter((smiley) => smiley.count === maxCount);
       this.setState({ winners: winners });
-    }
   };
   render() {
     return (
