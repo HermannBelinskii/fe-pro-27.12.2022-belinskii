@@ -1,0 +1,23 @@
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FF7373;
+    color: #fff;
+    padding: 15px 19px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+  
+.fa_trash {
+    margin-left: 20px;
+    &:hover{
+        color: #FF4040; 
+    }
+}
+  
+.completed {
+    color: #f5b0b0;
+    text-decoration: line-through;
+}
