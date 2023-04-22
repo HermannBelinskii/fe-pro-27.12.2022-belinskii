@@ -1,13 +1,12 @@
-import TodoWrap from "./components/TodoList/TodoWrap"
-// import './App.css'
 import styles from './App.module.scss'
+import Todo from "./components/TodoList/Todo"
 
 
 function App() {
  
   return (
     <div className={styles.app}>
-      <TodoWrap />
+      <Todo />
     </div>
   )
 }

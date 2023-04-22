@@ -4,11 +4,11 @@ import {v4 as uuidv4} from 'uuid';
 import todoList from '../../mockData';
 import TodoForm from './components/TodoForm';
 import TodoItem from './components/TodoItem';
-import styles from './TodoWrap.module.scss'
+import styles from './Todo.module.scss'
 
 
 
-export default function TodoWrap () {
+export default function Todo () {
 
     const [todos, setTodos] = useState(todoList)
 
