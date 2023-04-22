@@ -1,9 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
-import styles from './Todo.module.scss';
+import styles from './TodoItem.module.scss';
 
-export default function Todo ({task, toggleComplete, deleteTodo}) {
+export default function TodoItem ({task, toggleComplete, deleteTodo}) {
     return (
         <div className={styles.todo}>
             <p 
