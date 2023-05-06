@@ -1,8 +1,8 @@
-const InputElement = ({onChange, defaultValue, data}) => {
+const InputElement = ({onChange, defaultValue, data, label}) => {
     return ( 
         <div className="mb-3 ml-3">
             <label htmlFor={data} className="form-label">
-                First name
+                {label}
             </label>
             <input
                 onChange={onChange}

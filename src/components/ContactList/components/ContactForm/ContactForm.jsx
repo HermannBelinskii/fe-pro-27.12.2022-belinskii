@@ -5,17 +5,20 @@ const ContactForm = ({onChange, onSubmit, value}) => {
     return ( 
         <>
             <form onSubmit={onSubmit}>
-                <InputElement 
+                <InputElement
+                    label={'First name'} 
                     onChange={onChange} 
                     defaultValue={value.firstName} 
                     data={"firstName"}
                 />
                 <InputElement 
+                    label={'Last name'} 
                     onChange={onChange} 
                     defaultValue={value.lastName} 
                     data={"lastName"}
                 />
                 <InputElement 
+                    label={'Phone'} 
                     onChange={onChange} 
                     defaultValue={value.phone} 
                     data={"phone"}
