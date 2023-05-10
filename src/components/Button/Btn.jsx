@@ -1,6 +1,6 @@
 const Btn = ({ userId, onClick, title}) => {
     return (
-        <button onClick={() => onClick(userId)}>{title}</button>
+        <button className="btn btn-light mx-5 my-2" onClick={() => onClick(userId)}>{title}</button>
     );
 };
     
