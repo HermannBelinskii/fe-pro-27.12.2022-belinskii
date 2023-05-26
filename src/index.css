@@ -1,0 +1,63 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper{
+  max-width: 1440px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-form{
+  width: 600px;
+  height: auto;
+  margin: 20px auto;
+}
+
+.input-and-btn{
+  display: flex;
+}
+
+.todo-box{
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.todo-box .content{
+  display: flex;
+}
+
+.todo-box .content p{
+  margin-top: 14px;
+  margin-left: 6px;
+}
+
+.todo-box span{
+  margin: 0 15px;
+}
+
+.delete-all{
+  width: 150px;
+  display: flex;
+  justify-self: start;
+}
+
+.actions-box{
+  cursor: pointer;
+}
+
+.back-btn{
+  margin-top: 25px;
+  width: 100%;
+}
